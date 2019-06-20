@@ -24,11 +24,30 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
+.m_bor-1 {
+    border: 40px  solid #5F5857;
+}
+.titulo-3 {
+    padding-top: 120px;
+}
+.m_space {
+    padding-top: 60px;
+
+}
+.m_desc_option {
+    color: #734242;
+    font-size: 15px;
+}
+.m_header_wrapper {
+    width: 100%;
+    background-image: url('{{ asset('images/bg1.jpg') }}');
+}
 </style>
 </head>
 <body>
+<div class="m_header_wrapper">
 <!--BARRA DE NAVEGACION PRINCIPAL-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#"><!--SE LIGA A UNA PAGINA#-->
     <img src="https://image.flaticon.com/icons/svg/25/25663.svg" width="30" height="30" alt=""><!--SE AGREGA UNA IMAGEN A LADO DEL LOGOTIPO-->
     Learny</a>
@@ -50,9 +69,8 @@
         </ul>
     </div>
 </nav>
-<!--CONTAINER:TITULO CON PADDING-->
 <div class="container">
-    <div class="row">
+<div class="row">
         <div class="col">
             <h1 class="text-uppercase text-center titulo-1"><small>Do you want to improve your English skills?</small></h1>
         </div>
@@ -63,24 +81,51 @@
         </div>
     </div>
     <form><!--FORMULARIO-->
-        <div class="row align-items-center">
-            <div class="offset-2 col m_col-2">
+        <div class="row align-items-center m_bor-1">
+            <div class="col m_col-2">
                 <input type="text" class="form-control " placeholder="COUNTRY">
             </div>
             <div class="col m_col-2">
                 <input type="text" class="form-control" placeholder="STATE">   
             </div>
-            <div class="col m_col-2 ">
-                <button type="button" class="btn btn-primary text-uppercase text-center">Find an instructor</button>
+            <div class="col m_col-2">
+                <button type="button" class="btn btn-primary btn-block  text-uppercase text-center">Find an instructor</button>
             </div>
         </div>
     </form>
 </div>
+</div>
+<!--CONTAINER:TITULO CON PADDING-->
+<div class="container">
+    
+    <div class="row">
+        <div class="col titulo-3">
+            <h1 class="text-center">BENEFITS</h1>
+        </div>
+    </div>
+    <div class="row m_space">
+        <div class="col">
+            <img src="https://es.vector.me/files/images/3/3/337022/blue_circle_preview"class="rounded mx-auto d-block" width="100" height="100"alt="">
+            <p class="text-center"><strong>Safe</strong></p>
+            <p class="text-center m_desc_option">With faded secondary text</p>
+        </div>
+        <div class="col">
+            <img src="https://es.vector.me/files/images/3/3/337022/blue_circle_preview"class="rounded mx-auto d-block" width="100" height="100"alt="">
+            <p class="text-center"><strong>Immersive</strong></p>
+            <p class="text-center m_desc_option">With faded secondary text</p>
+        </div>
+        <div class="col">
+            <img src="https://es.vector.me/files/images/3/3/337022/blue_circle_preview"class="rounded mx-auto d-block" width="100" height="100"alt="">
+            <p class="text-center"><strong>Effective</strong></p>
+            <p class="text-center m_desc_option">With faded secondary text</p>
+        </div>
+    </div>
+</div>
 
     
 </div>
-    Hola mundo
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
