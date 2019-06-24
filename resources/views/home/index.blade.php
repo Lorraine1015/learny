@@ -25,9 +25,9 @@
     </div>
 </nav>
 <div class="container">
-    <div class="row">
+    <div class="row titulo-1 text-white">
         <div class="col">
-            <h1 class="text-uppercase text-white text-center titulo-1"><small>Do you want to improve your English skills?</small></h1>
+            <h1 class="text-uppercase  text-center "><small>Do you want to improve your English skills?</small></h1>
         </div>
     </div>
     <div class="row">
@@ -37,11 +37,29 @@
     </div>
     <form><!--FORMULARIO-->
         <div class="row align-items-center m_bor-1">
-            <div class="col m_col-2">
-                <input type="text" class="form-control " placeholder="COUNTRY">
+            <div class="col m_col-2 form-group">
+                <label for="exampleFormControlSelect1"></label>
+                <select class="form-control" id="Countryselect">
+                    <option selected>Country</option>
+                    <option>México</option>
+                    <option>Estados Unidos</option>
+                    <option>Canadá</option>
+                </select>
             </div>
-            <div class="col m_col-2">
-                <input type="text" class="form-control" placeholder="STATE">   
+            <div class="col m_col-2 form-group">
+                <label for="exampleFormControlSelect1"></label>
+                <select class="form-control" id="Stateselect">
+                    <option selected>State</option>
+                    <option>Aguascalientes</option>
+                    <option>Baja California</option>
+                    <option>Chiapas</option>
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>Arizona</option>
+                    <option>Ontario</option>
+                    <option>Alberta</option>
+                    <option>Quebec</option>
+                </select> 
             </div>
             <div class="col m_col-2">
                 <button type="button" class="btn btn-primary btn-block  text-uppercase text-center">Find an instructor</button>
@@ -129,4 +147,34 @@
 
     
 </div>
-@endsection 
+@endsection
+
+@section('jquery_script')
+<script>
+$( document ).ready(function() {
+    //Al hacer clic en tal selector se cambia por lo asignado
+    $('.titulo-1').click(function() {//.clase
+        var html = $(this).html();
+        $(this).html('Michelle');
+    });
+    //Escucha lo que es una seleccion
+    $('#Countryselect').change(function(){//#id change=cambio de seleccion
+        var country= $(this).val();
+        console.log('country', country);//printf
+        //BOTONES DEPENDIENTES
+        if(country =='México'){
+            var cone="<option>Aguascalientes</option><option>Baja California</option><option>Chiapas</option>";
+            $('#Stateselect').html(cone);//sustituye los valores del id stateselectpor los de cone
+            
+        }else if(country=='Estados Unidos'){
+            var st= " <option>Alabama</option><option>Alaska</option><option>Arizona</option>";
+            $('#Stateselect').html(st);
+        } else{
+            var cn="<option>Ontario</option><option>Alberta</option><option>Quebec</option>";
+            $('#Stateselect').html(cn);
+        }
+    });
+});
+</script>
+@endsection
+
