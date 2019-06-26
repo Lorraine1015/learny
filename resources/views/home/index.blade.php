@@ -41,9 +41,9 @@
                 <label for="exampleFormControlSelect1"></label>
                 <select class="form-control" id="Countryselect">
                     <option selected>Country</option>
-                    <option>México</option>
-                    <option>Estados Unidos</option>
-                    <option>Canadá</option>
+                    @foreach($countries as $country)
+                        <option>{{ $country->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col m_col-2 form-group">
