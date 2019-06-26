@@ -12,4 +12,11 @@
 */
 
 Route::get('/', 'HomeController@index')->name ('homepage');
-
+//COUNTRY
+Route::get ('countries','CountriesController@index')->name('countries.index');
+Route::get ('countries/create','CountriesController@create')->name('countries.create');
+Route::get('countries/{country}/edit','CountriesController@edit')->name('countries.edit');
+Route::get ('countries/{country}','CountriesController@show')->name('countries.show');
+Route::post('countries','CountriesController@store')->name('countries.store');
+Route::put('countries/{country}','CountriesController@update')->name('countries.update');
+Route::delete('countries/{country}','CountriesController@delete')->name('countries.delete');
