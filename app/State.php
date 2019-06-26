@@ -8,6 +8,9 @@ class State extends Model
 {
     //
     protected $fillable = [
-        'name'
+        'name','country_id'
     ];
+    public function country(){
+        return $this->belongsTo('App\Country');
+    }
 }

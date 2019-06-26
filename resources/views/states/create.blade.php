@@ -12,6 +12,14 @@
     @csrf
         <p>Nombre</p>
         <input type="text" value="" name="state[name]">
+        <p>Country</p>
+        <select name="state[country_id]">
+            @foreach($countries as $item)
+                <option value="{{$item->id}}">
+                    {{$item->name}}
+                </option>
+            @endforeach    
+        </select>
         <input type="submit" >
     </form>
 

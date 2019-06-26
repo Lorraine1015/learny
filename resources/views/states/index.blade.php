@@ -16,6 +16,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
+                <th>Country</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                         </a>
                     </td>
                     <td>{{$state->name}}</td>
+                    <td>{{$state->country->name}}</td>
                     <td>
                         <a href="{{route('states.edit',['state'=>$state]) }}">
                             Editar
@@ -38,7 +40,7 @@
                             <input type="submit" value="Eliminar">
                         </form>
                     </td>
-
+ 
                 </tr>
             @endforeach
         </tbody>

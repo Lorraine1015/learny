@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\State;
+use App\Country;
 
 class StatesController extends Controller
 {
@@ -13,7 +14,8 @@ class StatesController extends Controller
         return view('states.index',['states'=>$states]);
     }
     function create(Request $req){
-        return view('states.create');
+        $countries=Country::all();
+        return view('states.create',['countries'=> $countries]);
     }
     function show(Request $req,State $state){
         return view('states.show',['state'=>$state]);

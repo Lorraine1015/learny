@@ -16,6 +16,9 @@ class CreateStatesTable extends Migration
         Schema::create('states', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+
+            $table->unsignedBigInteger('country_id'); //añadimos a la tabla el elemento relacionado
+            $table->foreign('country_id')->references('id')->on('countries');//se el denota que es una llave foranea y de donde proviene
             $table->timestamps();
         });
     }
