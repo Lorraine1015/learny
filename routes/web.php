@@ -20,3 +20,11 @@ Route::get ('countries/{country}','CountriesController@show')->name('countries.s
 Route::post('countries','CountriesController@store')->name('countries.store');
 Route::put('countries/{country}','CountriesController@update')->name('countries.update');
 Route::delete('countries/{country}','CountriesController@delete')->name('countries.delete');
+//STATE
+Route::get ('states','StatesController@index')->name('states.index');
+Route::get ('states/create','StatesController@create')->name('states.create');
+Route::get('states/{state}/edit','StatesController@edit')->name('states.edit');
+Route::get ('states/{state}','StatesController@show')->name('states.show');
+Route::post('states','StatesController@store')->name('states.store');
+Route::put('states/{state}','StatesController@update')->name('states.update');
+Route::delete('states/{state}','StatesController@delete')->name('states.delete');
