@@ -28,3 +28,5 @@ Route::get ('states/{state}','StatesController@show')->name('states.show');
 Route::post('states','StatesController@store')->name('states.store');
 Route::put('states/{state}','StatesController@update')->name('states.update');
 Route::delete('states/{state}','StatesController@delete')->name('states.delete');
+//OTRAS RUTAS
+Route::get('ajax/states/{country}','StatesController@ajaxindex')->name('states.ajaxindex');

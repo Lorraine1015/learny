@@ -13,6 +13,12 @@ class StatesController extends Controller
         $states= State::all();
         return view('states.index',['states'=>$states]);
     }
+    function ajaxindex(Request $req,$country){
+        $states= State::where('country_id', '=', $country)->get();
+        $data = [];
+        $data['states'] = $states;
+        return response()->json($data);
+    }
     function create(Request $req){
         $countries=Country::all();
         return view('states.create',['countries'=> $countries]);

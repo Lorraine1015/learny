@@ -158,22 +158,37 @@ $( document ).ready(function() {
         $(this).html('Michelle');
     });
     //Escucha lo que es una seleccion
-    $('#Countryselect').change(function(){//#id change=cambio de seleccion
+    $('#Countryselect').change(function() {//#id change=cambio de seleccion
         var country= $(this).val();
         console.log('country', country);//printf
         //BOTONES DEPENDIENTES
+        /*
         if(country =='México'){
             var cone="<option>Aguascalientes</option><option>Baja California</option><option>Chiapas</option>";
-            $('#Stateselect').html(cone);//sustituye los valores del id stateselectpor los de cone
+            $('#Stateselect').html(cone);//sustituye los valores del id stateselect por los de cone
             
         }else if(country=='Estados Unidos'){
-            var st= " <option>Alabama</option><option>Alaska</option><option>Arizona</option>";
+            var st= "<option>Alabama</option><option>Alaska</option><option>Arizona</option>";
             $('#Stateselect').html(st);
         } else{
             var cn="<option>Ontario</option><option>Alberta</option><option>Quebec</option>";
             $('#Stateselect').html(cn);
-        }
+        }*/
     });
+    // Colocar el get dentro del cambio de país
+    // Consultar solo los estados del país indicado
+    // Mostrar los estados del país
+    $.get("{{ route('states.ajaxindex',['country'=>$country]) }}")//checar !!!!!
+        .done(function(data) {
+            var html="";
+            for(var i  = 0; i < data.states.length; i++) {
+                html=html+ "<option>"+ data.states[i].name +"</option>";
+                
+            }
+            console.log(data);
+            $('#Stateselect').html(html);
+        });
+    
 });
 </script>
 @endsection
