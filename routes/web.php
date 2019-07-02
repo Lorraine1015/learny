@@ -29,4 +29,4 @@ Route::post('states','StatesController@store')->name('states.store');
 Route::put('states/{state}','StatesController@update')->name('states.update');
 Route::delete('states/{state}','StatesController@delete')->name('states.delete');
 //OTRAS RUTAS
-Route::get('ajax/states/{country}','StatesController@ajaxindex')->name('states.ajaxindex');
+Route::get('ajax/states/{country?}','StatesController@ajaxindex')->name('states.ajaxindex');//?signo de marcar opcional un parametro

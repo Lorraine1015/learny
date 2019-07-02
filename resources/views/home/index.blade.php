@@ -42,7 +42,7 @@
                 <select class="form-control" id="Countryselect">
                     <option selected>Country</option>
                     @foreach($countries as $country)
-                        <option>{{ $country->name }}</option>
+                        <option value="{{ $country->id }}">{{ $country->name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -174,11 +174,12 @@ $( document ).ready(function() {
             var cn="<option>Ontario</option><option>Alberta</option><option>Quebec</option>";
             $('#Stateselect').html(cn);
         }*/
-    });
+    
     // Colocar el get dentro del cambio de país
     // Consultar solo los estados del país indicado
     // Mostrar los estados del país
-    $.get("{{ route('states.ajaxindex',['country'=>$country]) }}")//checar !!!!!
+    var url = "{{ route('states.ajaxindex') }}/" + country;//se liga a lo que es la variable de la seleccion
+    $.get(url)
         .done(function(data) {
             var html="";
             for(var i  = 0; i < data.states.length; i++) {
@@ -188,7 +189,7 @@ $( document ).ready(function() {
             console.log(data);
             $('#Stateselect').html(html);
         });
-    
+    });
 });
 </script>
 @endsection
