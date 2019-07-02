@@ -16,7 +16,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Country</th>
+                <th>Pais</th>
                 <th>Acciones</th>
             </tr>
         </thead>
