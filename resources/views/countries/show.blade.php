@@ -17,11 +17,11 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
-                <th>Acciones</th>
+                
             </tr>
         </thead>
         <tbody>
-        @foreach($countries->states as $item)<!-- Recorre el array  -->
+        @foreach($country->states as $item)<!-- Recorre el array  -->
                 <tr>
                     <td>
                     {{$item ->id}}
